@@ -1,0 +1,337 @@
+/*
+ Theme Name:     Divi-Child-LDM
+ Author:         Lentini Design and Marketing [LDM]
+ Author URI:     https://lentinidesign.com
+
+ Description:    Custom built by <strong>Lentini Design &amp; Marketing</strong> (<a href="https://lentinidesign.com/" target="_blank">lentinidesign.com</a>).
+
+ Package:        ldm_custom
+ Version:        1.0
+ 
+ Theme URI:      https://www.elegantthemes.com/gallery/divi/
+ Template:       Divi
+
+*/
+
+
+/** [LDM] - Divi Child Theme
+ *
+ *
+ */
+
+/** [LDM] Custom Styles **/
+
+/** Color Palette - Define 6 colors in DIvi Builder ** /
+Colors:
+Blue #293895
+Gold #B69334
+Dark Gold  #8B7A41
+Brown #433733
+
+Fonts:
+Abhaya Libre regular (Only for Nav)
+Playfair Display Regular (Headings)
+Source Sans Pro Light, Regular and SemiBold (Light and Reg for body and all buttons are SemiBold)
+
+
+ */
+
+/** Here are the general ranges for each of the breakpoints within Divi:
+  Large Desktop:   1405px and above
+  Standard Desktop: between   1100px and 1405px
+  Laptops and Large Tablets:   between 980px and 1100px
+  Tablets:   between 768px and 980px
+  Smartphones and small Tablets:   between 320px and 768px;
+  Smartphones:   between 320px and 480px;
+*/
+
+/** Set Theme Default Fonts - To override theme customozer site wide Default fonts ...  NOT NEEDED newest Divi does this, execpt for non-included fonts * /
+  h1,h2,h3,h4,h5,h6 { font-family: 'Futura-Heavy',Helvetica,Arial,Lucida,sans-serif }
+  body,input,textarea,select { font-family: 'Proxima-Nova',Helvetica,Arial,Lucida,sans-serif }
+  #main-header,#et-top-navigation { font-family: 'Lato',Helvetica,Arial,Lucida,sans-serif }
+**/
+
+/** Resize top menu font to prevent menu line roll pre-mobile menu */
+@media (max-width: 1100px) {
+ #top-menu li, #top-menu li a {
+  font-size: 14px !important;
+  padding-right: 0.7vw;
+ }
+ .et_header_style_left #et-top-navigation {
+  padding-right: 2vw !important;
+ }
+ /* Dropdown arrows */
+ #top-menu .menu-item-has-children>a:first-child:after, #et-secondary-nav .menu-item-has-children>a:first-child:after
+ {font-size: 14px;}
+ #top-menu .menu-item-has-children>a:first-child, #et-secondary-nav .menu-item-has-children>a:first-child {
+    padding-right: 1.3vw;
+ }
+}
+/**/
+
+/** Change mobile menu breakpoint (default=980)* /
+@media (max-width: 1023px) {
+ #et_mobile_nav_menu {display: block;}
+ #top-menu {display: none;}
+}
+*/
+
+/** Fix search icon rolling down */
+@media only screen and (min-width: 981px) {
+    .et_header_style_left #et_top_search {
+        position: absolute !important;
+        right: 0px;
+    }
+    .et_fullwidth_nav.et_header_style_left #et_top_search {right: 30px;}
+
+    .et_header_style_left #et-top-navigation {
+        padding-right: 40px !important;
+    }
+    .et_header_style_centered #et_top_search {
+        position: absolute !important;
+        right: -20px;
+        top: 10px;
+    }
+    .et_header_style_centered #et-top-navigation {
+        padding-right: 0px !important;
+    }
+}
+/** Small screens - Expand search input to cover header */
+.et_search_form_container.et_pb_search_visible{
+ background:white;
+}
+@media (max-width: 400px){
+ .et_header_style_left .et-search-form {
+  width: 100% !important;
+  max-width: 100% !important;
+  z-index: 1000;
+ }
+}
+
+
+/* Regular - squeeze and center top-menu to keep from wrapping * /
+@media (max-width: 1200px) {
+  #top-menu .ldm_donate_now a {
+    padding:35px 1vw;
+  }
+  #top-menu li {
+    padding-right: .5vw;
+    font-size:10px
+  }
+  #top-menu-nav {
+    text-align:center
+  }
+}
+*/
+/* Regular Menu wraps here - Adjust for wrapped Donate Now button * /
+@media (max-width: 1023px) and (min-width: 981px) {
+  #top-menu .ldm_donate_now a {
+   padding: 15px 20px !important;
+   margin-top:-50px
+  }
+  #top-menu li {
+   padding-right: 1.3vw;
+  }
+}
+*/
+
+/** Mobile menu - Highlight current page - Can't do this with customizer */
+/*.et_mobile_menu .menu-item-has-children>a ,
+#mobile_menu {text-transform: uppercase; font-weight:500; letter-spacing:1px}*/
+#mobile_menu .current-menu-parent >a,
+#mobile_menu li.current-menu-item >a 
+{color:#293895;font-weight:bold;}
+
+.et_mobile_menu .current-menu-parent.menu-item-has-children>a  
+{border:1px solid #293895}
+#mobile_menu li.current_page_item:not(.current-menu-ancestor) >a
+{
+  background-color:#293895;
+  color:white !important;
+}
+
+/** Increase width of drop-down menus * /
+@media screen and (min-width: 981px) {
+ .sub-menu {min-width: 300px;}
+ #top-menu li li a {width: 260px;
+	padding: 4px 12px;
+ }
+ .ldm_get_involved_nav .sub-menu {min-width: 380px;}
+  #top-menu li.ldm_get_involved_nav li a {width: 325px;}
+}
+*/
+
+/** menu colors * /
+#et_search_icon:hover,#top-menu li.current-menu-ancestor>a,#top-menu li.current-menu-item>a,.bottom-nav li.current-menu-item>a,.comment-reply-link,.entry-summary p.price ins,.et-social-icon a:hover,.et_password_protected_form .et_submit_button,.footer-widget h4,.form-submit .et_pb_button,.mobile_menu_bar:after,.mobile_menu_bar:before,.nav-single a,.posted_in a,.woocommerce #content div.product p.price,.woocommerce #content div.product span.price,.woocommerce #content input.button,.woocommerce #content input.button.alt,.woocommerce #content input.button.alt:hover,.woocommerce #content input.button:hover,.woocommerce #respond input#submit,.woocommerce #respond input#submit.alt,.woocommerce #respond input#submit.alt:hover,.woocommerce #respond input#submit:hover,.woocommerce-page #content div.product p.price,.woocommerce-page #content div.product span.price,.woocommerce-page #content input.button,.woocommerce-page #content input.button.alt,.woocommerce-page #content input.button.alt:hover,.woocommerce-page #respond input#submit,.woocommerce-page #respond input#submit.alt,.woocommerce-page #respond input#submit.alt:hover,.woocommerce-page #respond input#submit:hover,.woocommerce-page .star-rating span:before,.woocommerce-page a.button,.woocommerce-page a.button.alt,.woocommerce-page a.button.alt:hover,.woocommerce-page a.button:hover,.woocommerce-page button.button,.woocommerce-page button.button.alt,.woocommerce-page button.button.alt.disabled,.woocommerce-page button.button.alt.disabled:hover,.woocommerce-page button.button.alt:hover,.woocommerce-page button.button:hover,.woocommerce-page div.product p.price,.woocommerce-page div.product span.price,.woocommerce-page input.button,.woocommerce-page input.button.alt,.woocommerce-page input.button.alt:hover,.woocommerce-page input.button:hover,.woocommerce .star-rating span:before,.woocommerce a.button,.woocommerce a.button.alt,.woocommerce a.button.alt:hover,.woocommerce a.button:hover,.woocommerce button.button,.woocommerce button.button.alt,.woocommerce button.button.alt.disabled,.woocommerce button.button.alt.disabled:hover,.woocommerce button.button.alt:hover,.woocommerce div.product p.price,.woocommerce div.product span.price,.woocommerce input.button,.woocommerce input.button.alt,.woocommerce input.button.alt:hover,.woocommerce input.button:hover,.wp-pagenavi a:hover,.wp-pagenavi span.current {
+    color: #0f4c81
+}
+
+.et-search-form,.et_mobile_menu,.footer-widget li:before,.nav li ul,blockquote {
+    border-color: #0f4c81
+}
+
+#et-secondary-nav li ul,#top-header {
+    background-color: #0f4c81
+}
+*/
+
+/** make LOGO larger on mobile * /
+@media only screen and (max-width: 980px) {
+    body header img#logo {
+        max-width: 90%!important;
+        max-height: 90%!important;
+        height: auto!important;
+        width: auto!important;
+    }
+}
+*/
+
+/** [LDM] Keep secondary nav visible on small screens (Not FIXED header) * /
+@media screen and (max-width: 980px) {
+	#page-container {padding-top: 0px !important;}
+	#top-header {position: static !important;display: block !important;}
+	#top-header .container {padding-top: 0.75em !important;}
+	#page-container #main-header {position: relative !important;top: 0 !important;}
+	#top-header #et-secondary-menu,
+	#top-header #et-secondary-nav {display: block !important;}
+	#top-header #et-secondary-nav li {text-align: center !important;}
+	x#et-main-area {padding-top: 1px;}
+}
+*/
+
+/** For FIXED Header Nav bars on Mobile */
+
+/** [LDM] REMOVE IF No FIXED Top Menu * /
+#top-header {min-height:31px}
+@media screen and (max-width: 980px)
+{
+.et_secondary_nav_only_menu #main-header {top: 31px!important;}
+#et-secondary-nav .ldm_learn_more a {margin-top:5px}	
+}
+@media screen and (max-width: 460px) 
+{
+ #top-header {min-height:69px}
+ body.et_fixed_nav.et_secondary_nav_enabled #main-header {top: 69px!important;}
+ #et-secondary-nav .ldm_learn_more{display:block;max-width:100px;margin:auto !important}
+ #et-secondary-nav .ldm_learn_more a {margin-bottom:10px;}
+ #top-header #et-secondary-nav li {text-align: center !important;}
+ #top-header #et-secondary-nav {padding-top:5px}
+}
+/ ** END [LDM] REMOVE IF No Top Menu */
+
+/** Add Fixed Main Menu for Mobile * /
+@media (max-width: 980px) {
+ .et_non_fixed_nav.et_transparent_nav #main-header, .et_non_fixed_nav.et_transparent_nav #top-header, .et_fixed_nav #main-header, .et_fixed_nav #top-header {
+    position: fixed;
+ }
+ .et_menu_container {width:100%}
+ #et_top_search {margin-right:0;}
+ .et_secondary_nav_only_menu #top-header,
+ #top-header #et-secondary-menu,
+ #top-header #et-secondary-nav {display: block !important;}
+}
+.et_mobile_menu {
+    overflow: scroll !important;
+    max-height: 83vh;
+}
+/ ** END Add Fixed Main Menu for Mobile */
+
+
+
+
+/**
+ * Footer and Footer-Info
+ */
+#footer-info .ldm_menu {list-style:none}
+#footer-info .ldm_menu a {font-weight:400} /*all screens*/
+#footer-info .ldm_menu {/* text-align:center; */} /*for small screens*/
+#footer-info .ldm_menu {list-style-type:none !important}
+@media (min-width: 768px){ /*large screens*/
+ #footer-info .ldm_menu li { display:inline-block; }
+ #footer-info .ldm_menu li:after { content:" | ";padding: 0 12px;}
+ #footer-info .ldm_menu li:last-child:after { content:""; padding:0}
+}
+@media (min-width: 980px){ /*large screens*/
+ x#footer-bottom .container {width:65%}
+ x#footer-info .ldm_menu {text-align:left;}
+}
+#footer-bottom .et-social-icons li:first-child {margin-left:0}
+/* center footer info menu * /
+#footer-info {
+ float: none;
+}
+*/
+
+
+.et-social-sharethis a.icon:before {
+    content:"\e0a0";
+}
+
+/** Remove WP sidebar on non-Divi pages * /
+#sidebar{display:none;}
+#main-content .container:before {background: none;}
+@media (min-width: 981px){
+#left-area {width: 100%;padding-right: 0px !important;}}
+*/
+
+
+
+/** 
+ * General Stuff
+ */
+
+/** Custom Links */
+.ldm_nolink { pointer-events:none }
+.ldm_break {display: block !important;font-size:0;line-height:0;}
+.ldm_no_after:after { content:"" !important; padding:0 !important}
+.ldm_green_links a, a.ldm_green_links {color:#83d5c2}
+
+
+/* assign this CSS Class for a fullwidth row in a regular section */
+.ldm_fullwidth_row {width:100%!important;max-width:none!important} 
+
+/** List styles - move bullet outside list */
+body #main-content ul, body #main-content ol {
+ list-style-position: outside;
+}
+
+
+/** Custom Buttons */
+
+
+
+/** Center a Divi row (v and h) within it's container section */
+.ldm_row_center {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/** ALter Divi Blog-Grid thmb proportions 
+ */
+.ldm_blog_1-1 .entry-featured-image-url { padding-top: 100%; }
+.ldm_blog_3-2 .entry-featured-image-url { padding-top: 66.66%; }
+.ldm_blog_4-3 .entry-featured-image-url { padding-top: 75%; }
+.ldm_blog_16-9 .entry-featured-image-url { padding-top: 56.25%; }
+
+.ldm_blog_1-1 .entry-featured-image-url img,
+.ldm_blog_3-2 .entry-featured-image-url img,
+.ldm_blog_4-3 .entry-featured-image-url img,
+.ldm_blog_16-9 .entry-featured-image-url img {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  object-fit: cover;
+}
+
+
+
+/** 
+ *  SITE Customizations
+ *
+ */
+
+
+
